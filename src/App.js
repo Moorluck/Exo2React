@@ -1,23 +1,40 @@
 import logo from './logo.svg';
+import { nanoid } from 'nanoid';
 import './App.css';
+import StudentList from './component/student-list/student-list';
 
 function App() {
+
+  const students = [
+  {
+    id: nanoid(),
+    nom: "Dupont",
+    prenom: "Jean",
+    option: "Mathématique",
+    sexe: "Homme",
+    resultat: 85
+  },
+  {
+    id: nanoid(),
+    nom: "Duciel",
+    prenom: "Josephine",
+    option: "Philosophie",
+    sexe: "Femme",
+    resultat: 61
+  },
+  {
+    id: nanoid(),
+    nom: "Van Dijk",
+    prenom: "Kevin",
+    option: "Ingénieur",
+    sexe: "Homme",
+    resultat: 41
+  }
+]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <StudentList students={students} />
     </div>
   );
 }

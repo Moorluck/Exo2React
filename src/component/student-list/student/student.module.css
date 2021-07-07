@@ -1,0 +1,20 @@
+
+.resultatBad {
+    color: red;
+}
+
+.noResultat {
+    color: orange;
+}
+
+.backgroundHigh :hover {
+    background-color: #03aa113a;
+}
+
+.backgroundMedium :hover {
+    background-color: #f3b2004b;
+}
+
+.backgroundLow :hover {
+    background-color: #F0002020;
+}
