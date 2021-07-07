@@ -11,7 +11,7 @@ function App() {
     nom: "Dupont",
     prenom: "Jean",
     option: "Mathématique",
-    sexe: "Homme",
+    sexe: "Hommee",
     resultat: 85
   },
   {

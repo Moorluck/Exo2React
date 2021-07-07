@@ -6,20 +6,14 @@ const Student = function(props) {
 
     const {nom, prenom, option, sexe, resultat} = props;
 
-    if ((resultat < 0 || resultat > 100) && resultat) {
-        return (
-            <>
-                <p>Résultat incorrect</p>
-            </>
-        )
+    let resultatCorrect = true
+    if ((resultat < 0 || resultat > 100) || !resultat) {
+        resultatCorrect = false
     }
 
+    let sexeCorrect = true
     if (sexe !== 'Homme' && sexe !== 'Femme' && sexe !== 'Neutre') {
-        return (
-            <>
-                <p>Sexe incorrect</p>
-            </>
-        )
+        sexeCorrect = false
     }
 
     let color;
@@ -65,18 +59,19 @@ const Student = function(props) {
             <td>{nom}</td>
             <td>{prenom}</td>
             <td>{option}</td>
-            <td>{sexe}</td>
+            <td>{sexeCorrect ? sexe : "Sexe mal encodé"}</td>
             {
-            (resultatOK && resultat) ? 
+            (resultatOK && resultatCorrect) ? 
                 <td>{resultat}</td> : 
 
                 <td className={style.resultatBad}>
-                    {(resultat) ? resultat : <span className={style.noResultat}>Pas de résultat</span>}
+                    {(resultatCorrect) ? resultat : <span className={style.noResultat}>Pas de résultat</span>}
                 </td>
             }
             <td>{grade}</td>
         </tr>
     )
+
 }
 
 Student.propTypes = {
